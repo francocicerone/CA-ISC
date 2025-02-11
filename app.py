@@ -1,8 +1,12 @@
 import streamlit as st
 import pandas as pd
 
+# Cargar estilos desde styles.css
+with open("styles.css") as f:
+    st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
+
 # Título de la aplicación
-st.title("📋 Formulario de Encuesta")
+st.title("📋 Formulario Personalizado con CSS")
 
 # Campos del formulario
 nombre = st.text_input("Nombre:")
@@ -27,3 +31,4 @@ if st.checkbox("📊 Mostrar respuestas anteriores"):
         st.dataframe(df)
     except FileNotFoundError:
         st.warning("No hay respuestas registradas aún.")
+
