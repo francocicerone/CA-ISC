@@ -6,7 +6,7 @@ with open("styles.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 # Título de la aplicación
-st.title("📋 Formulario Personalizado con CSS")
+st.title("📋 Formulario Personalizado con Fuente Roboto")
 
 # Campos del formulario
 nombre = st.text_input("Nombre:")
@@ -30,5 +30,4 @@ if st.checkbox("📊 Mostrar respuestas anteriores"):
         df = pd.read_csv("respuestas.csv")
         st.dataframe(df)
     except FileNotFoundError:
-        st.warning("No hay respuestas registradas aún.")
-
+        st.warning("⚠️ No hay respuestas registradas aún.")
